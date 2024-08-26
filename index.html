@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty API</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Rick and Morty API</h1>
+        
+        <!-- Buscar Personajes -->
+        <!-- Summer Smith,Beth Smith,Morty Smith-->
+        <div class="busqueda">
+            <h2>Buscar Personajes</h2>
+            <input type="text" id="nombre-personaje" placeholder="Nombre del personaje">
+            <button id="buscar-personaje">Buscar Personaje</button>
+        </div>
+        <div id="resultado-personaje">
+            <h3>Personajes:</h3>
+            <div id="lista-personajes">
+            </div>
+        </div>
+
+        <!-- Buscar Episodios -->
+        <!-- Ejemplo Pilot,Ricksy Business,The Ricklantis Mixup-->
+
+        <div class="busqueda">
+            <h2>Buscar Episodios</h2>
+            <input type="text" id="nombre-episodio" placeholder="Nombre del episodio">
+            <button id="buscar-episodio">Buscar Episodio</button>
+        </div>
+        <div id="resultado-episodio">
+            <h3>Episodios:</h3>
+            <div id="lista-episodios"></div>
+        </div>
+
+        <!-- Buscar Ubicaciones -->
+        <!-- Earth,Citadel of Ricks,Nuptia 4 -->
+        <div class="busqueda">
+            <h2>Buscar Ubicaciones</h2>
+            <input type="text" id="nombre-ubicacion" placeholder="Nombre de la ubicación">
+            <button id="buscar-ubicacion">Buscar Ubicación</button>
+        </div>
+        <div id="resultado-ubicacion">
+            <h3>Ubicaciones:</h3>
+            <div id="lista-ubicaciones"></div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
