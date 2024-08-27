@@ -23,14 +23,43 @@ function cargarPersonajesPorDefecto() {
     fetch(`${API}/character/?page=1`)
         .then(response => response.json())
         .then(data => {
-            listaPersonajes.innerHTML = '';
-            data.results.forEach(personaje => {
-                listaPersonajes.innerHTML += `
+            mostrarPersonajes(data.results);
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+// Función para cargar los primeros 10 episodios
+function cargarPrimerosEpisodios() {
+    fetch(`${API}/episode/?page=1`)
+        .then(response => response.json())
+        .then(data => {
+            listaEpisodios.innerHTML = '';
+            data.results.slice(0, 10).forEach(episodio => {
+                listaEpisodios.innerHTML += `
                     <div class="lista-item">
-                        <h4>${personaje.name}</h4>
-                        <p>Especie: ${personaje.species}</p>
-                        <p>Género: ${personaje.gender}</p>
-                        <img src="${personaje.image}" alt="${personaje.name}" style="width: 100px;">
+                        <h4>${episodio.name}</h4>
+                        <p>Temporada: ${episodio.episode}</p>
+                        <p>Fecha de emisión: ${episodio.air_date}</p>
+                    </div>
+                `;
+            });
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+// Función para cargar las primeras ubicaciones
+function cargarPrimerasUbicaciones() {
+    fetch(`${API}/location/?page=1`)
+        .then(response => response.json())
+        .then(data => {
+            listaUbicaciones.innerHTML = '';
+            data.results.slice(0, 10).forEach(ubicacion => {
+                listaUbicaciones.innerHTML += `
+                    <div class="lista-item">
+                        <h4>${ubicacion.name}</h4>
+                        <p>Tipo: ${ubicacion.type}</p>
+                        <p>Dimensión: ${ubicacion.dimension}</p>
+                        <p>Habitantes: ${ubicacion.residents.length}</p>
                     </div>
                 `;
             });
@@ -128,5 +157,9 @@ function buscarUbicaciones() {
         .catch(error => console.error('Error:', error));
 }
 
-// Cargar personajes por defecto al inicio
-window.addEventListener('DOMContentLoaded', cargarPersonajesPorDefecto);
+// Cargar personajes, episodios y ubicaciones por defecto al inicio
+window.addEventListener('DOMContentLoaded', () => {
+    cargarPersonajesPorDefecto();
+    cargarPrimerosEpisodios();
+    cargarPrimerasUbicaciones();
+});
