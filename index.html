@@ -10,8 +10,33 @@
     <div class="container">
         <h1>Rick and Morty API</h1>
         
+        <!-- Filtros de Personajes -->
+        <div class="filtros">
+            <h2>Filtros de Personajes</h2>
+            <select id="filtro-genero">
+                <option value="">Todos los géneros</option>
+                <option value="Male">Masculino</option>
+                <option value="Female">Femenino</option>
+                <option value="Genderless">Sin género</option>
+                <option value="Unknown">Desconocido</option>
+            </select>
+
+            <select id="filtro-especie">
+                <option value="">Todas las especies</option>
+                <option value="Human">Humano</option>
+                <option value="Alien">Extraterrestre</option>
+                <!-- Agrega más especies según sea necesario -->
+            </select>
+
+            <select id="filtro-origen">
+                <option value="">Todos los orígenes</option>
+                <option value="Earth">Tierra</option>
+                <option value="unknown">Desconocido</option>
+                <!-- Agrega más orígenes según sea necesario -->
+            </select>
+        </div>
+
         <!-- Buscar Personajes -->
-        <!-- Summer Smith,Beth Smith,Morty Smith-->
         <div class="busqueda">
             <h2>Buscar Personajes</h2>
             <input type="text" id="nombre-personaje" placeholder="Nombre del personaje">
@@ -19,13 +44,10 @@
         </div>
         <div id="resultado-personaje">
             <h3>Personajes:</h3>
-            <div id="lista-personajes">
-            </div>
+            <div id="lista-personajes"></div>
         </div>
 
         <!-- Buscar Episodios -->
-        <!-- Ejemplo Pilot,Ricksy Business,The Ricklantis Mixup-->
-
         <div class="busqueda">
             <h2>Buscar Episodios</h2>
             <input type="text" id="nombre-episodio" placeholder="Nombre del episodio">
@@ -37,7 +59,6 @@
         </div>
 
         <!-- Buscar Ubicaciones -->
-        <!-- Earth,Citadel of Ricks,Nuptia 4 -->
         <div class="busqueda">
             <h2>Buscar Ubicaciones</h2>
             <input type="text" id="nombre-ubicacion" placeholder="Nombre de la ubicación">
